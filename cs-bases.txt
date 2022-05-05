@@ -1,0 +1,191 @@
+BASES
+
+DECIMAL MEANS BASE 10. -- it has 10 digits that we can use to represent our numbers: 0, 1, 2... 8, 9
+We can combine them like 231 or 5,000,000
+
+##########################################################################
+
+BINARY MEANS BASE 2 -- we have 2 digits to represent all the same numbers. 0 and 1. 0 in Decimal is 0 in binary. 1 in decimal is 1 in binary. To go to the next number, we take the right-hand number and move it over. So 2 in binary is 1 0. 3 would be 1 1. 4 would be 1 0 0. 5 is 1 0 1. 6 is 1 1 0.
+
+BASE 5 -- what are the next 3 numbers after 3 in Base 5? We have 0, 1, 2, 3, 4. 5 would be 10, then 6 would be 11, 7 would be 12 etc.
+
+BASE 14 -- If the base is less than 10, we use 0...9, but for bases bigger than 10 we use 0...9, but we need more digits. We need more characters. We add letters. So it's 0...9, a, b, c, d. We can use numerical or alphabetical digits in some bases.
+
+What are the next 3 numbers after c in base 14? It's d which is 14, but then we've run out of digits so we start from 0 again. So 15 would be 10, 16 would be 11.19 would be 1a, then 1b, 1c, 1d, 20, 21 etc.
+
+####################################################################################
+
+Maths Rules:
+
+1. Any number in the power of something is the same as that number multiplied by itself for the powers times. 
+2. Any number in the power of 0 is equal to 1. 2 to the power of 0 is 1. 5 to the power of 0 is 1. Any number to the power of 1 is itself. 1 to the power of 1 is 1. 5 to the power of 1 is 5.
+3.Whenever we multiply something by 0, the answer is 0. N x 0 is 0. 0 x n is 0.
+4. Any number multiplied by 1 is equal to itself, and vice versa.
+
+ASSIGNING POWERS WHEN CONVERTING: Always assign the power of the base you START in.
+
+#####################################################################################
+
+HOW TO CONVERT DECIMALS TO BASES, AND BASES TO DECIMALS.
+
+CONVERTING BINARY TO DECIMAL(BASE 10):
+
+10011101 converting to decimal.
+
+1. Start from the right-hand side, start with 0.
+
+So in this case we start with 1. Remember the base you're in, so in this case we're in base 2, and each digit will be compared to base 2 with whatever power represents their decimal place, starting from 0. So 1 is 2 to the power of 0, 0 is 2 to the power of 1, etc.
+
+3. Multiply the digit by the power. So in our case:
+
+	1 X 2^7
+	0 x 2^6
+	0 x 2^5
+	1 x 2^4
+	1 x 2^3
+	1 x 2^2
+	0 x 2^1
+	1 x 2^0
+
+So: 128 + 0 + 0 + 16 + 8 + 4 + 1 + 0 = 157
+
+
+3. Add all together. So in this case, we end up with: 157.
+
+-- You can use this method whenever you want to convert any base to decimal, you just have to keep the base in mind and use that as your basis for multiplication. 
+
+-- In binary, rightmost number will tell you whether the binary number is odd or even. When it is 1, it means that the binary number is odd. When it's 0, it is even. This is for binary only.
+
+#################################################################
+
+A SHORTHAND FOR CONVERTING BINARY TO DECIMAL:
+
+When you have 1 followed by some number of 0s, the number will be 2^however-many-zeros-there-are. So in the case of 1000, it's going to be 2^4, because there are 4 0s. 
+
+10100 = 1000 + 100 = 2^4 + 2^2 = 16 + 4 = 20
+
+Count the zeros, and those are the powers.
+
+#################################################################
+
+CONVERTING HEXADECIMAL(BASE 16) TO DECIMAL(BASE 10)
+
+Base 16 means we have 16 digits: 0, 1, 2... 9, a, b, c, d, e, f
+
+0xb17 --> ( ) ((in binary))              (0x --> denotes hexadecimal number. For binary it's 0b)
+
+SO to convert, we're doing the same thing as before, but our base is now 16, and we need to deal with letters now. So we start by assigning the base to the digits and their powers in order of decimal places:
+	
+	b x 16^2
+	1 x 16^1
+	7 x 16^0
+
+Which is: b x 16^2 + 1 x 16^1 + 7 x 16^0
+
+	b x 256 + 1 x 16 + 7 x 1
+
+We need to convert b to decimal. B is 11 in decimal (You can look at a table online!)
+
+	2816 + 16 + 7 = 2839
+
+So 0xb17 in binary is 2839.
+
+###################################################################
+
+CONVERTING HEXADECIMAL COLOUR INTO RGB COLOUR
+
+SO #121A37 to RGB.
+
+RGB is three numbers: (R, G, B). We just need to split the hex number into 3 numbers, each of which will include 2 digits (because hex values are always 6 digits).
+
+12 1A 37.   --> R, G, B
+
+So we just have to first convert 0x12 to base 10 using the same method as before. 
+
+	1 x 16^1
+	2 x 16^0
+
+Which is 16 + 2 = 18.
+
+Then we convert 0x1A to base 10:
+
+	1 x 16^1
+	A x 16^0
+
+A in hexadecimal is 10, so:
+
+This is 16 + 10 = 26
+
+Then we convert 0x37 to base 10:
+
+	3 x 16^1
+	7 x 16^0
+
+Which is 48 + 7 = 55
+
+So #121A37 in RGB is (18, 26, 55)
+
+###################################################################################
+
+CONVERTING DECIMAL(BASE 10) TO BINARY(BASE 2):
+
+Convert 37 to binary.
+
+You need to DIVIDE the number by the base.
+
+So 37 / 2 = 18 r 1
+
+Then we ask ourselves, is this answer equal to 0? If not, we divide again.
+
+18 / 2 = 9 r 0 -- we need to keep track of all remainders. 9 is still greater than 0, divide again:
+
+9 / 2 = 4 r 1 -- 4 is still greater than 1, so we continue:
+
+4 / 2 = 1 r 0 -- keep going
+
+2 / 2 = 1 r 0 -- still greater than 0, keep going.
+
+1 / 2 = 0 r 1 -- the answer is finally 0, so we stop. All the remainders become our number (bottom-first): 100101. 
+
+So 37 in base 10 = 100101 in base 2.
+
+-- We do the same thing when we convert from decimal to any base. So if you're converting to base 5, you divide every number by 5 (instead of 2 for base 2).
+
+###################################################################################
+
+CONVERTING FROM ONE BASE TO ANOTHER (NON-DECIMAL):
+
+Convert 36(BASE 7) to BASE 5.
+
+1. Convert the number you're given to decimal.
+2. Convert decimal to the desired base.
+
+So first convert 36 to decimal (from base 7, so it's the 7th power):
+
+	3 x 7^1
+	6 x 7^0
+
+21 + 6 = 27
+
+Now you have to convert 27 to the desired base: BASE 5. Now we DIVIDE.
+
+27 / 5 = 5 r 2
+5 / 5 = 1 r 0
+1 / 5 = 0 r 1
+
+So our result is the remainders, from the bottom: 102.
+
+#####################################################################################
+
+ANOTHER EXAMPLE:
+
+Convert 34 (decimal) to BASE 3.
+
+We need to divide.
+
+34 / 3 = 11 r 1
+11 / 3 = 3 r 2
+3 / 3 = 1 r 0
+
+1021.
+
