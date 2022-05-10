@@ -192,7 +192,8 @@ We need to divide.
 ####################################################################################
 DECIMAL TO BASE 16(HEXADECIMAL)
 
-Num/base and then keep dividing. Remember the letters for Hex.
+Num/base and then keep dividing until you get to zero. Any numbers in pairs are converted to letters. 
+Remember the letters for Hex.
 
 Decimal | Binary | Hexadecimal
 

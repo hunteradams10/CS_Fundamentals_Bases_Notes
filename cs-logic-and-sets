@@ -1,0 +1,255 @@
+BINARY ADDITION
+
+Maths rules:
+
+0 + 0 = 0
+
+1 + 0 = 1
+
+0 + 1 = 1
+
+1 + 1 = 10
+
+10 + 1 = 11
+
+11 + 1 = 100
+
+######################################################################
+
+1) Write one under another
+
+2) Make sure the rightmost ends are aligned (align them on the right)
+
+3) If we have any missing numbers in front, we can add 0s in those places.
+
+4) Start addition from the right
+
+Ex. 1100 1011 + 1010 11
+
+
+1100 1011
+  10 0111
+
+#####################################################################
+
+BITWISE OPERATIONS
+
+These are usually for binary, but you see this done on decimal. So you need to
+Convert it to binary first, then convert back to the original base.
+
+1) If not a binary number, convert to binary
+2) Apply the operator
+3) Convert back to the original base
+
+####################################################################
+
+NOT (negation) weird line thing ~ - (we just need to switch 0s to 1s and 1s to 0s)
+
+Eg. Find the negation of 1010 (is 0101). You could even put 101
+
+Find negation of 4. (We need to convert to binary first) - 100 - which means the negation is 011, but we need to convert it back to base 10. 11 in binary is 3 in decimal. So the negation of 4 is 3.
+
+################################################################
+
+AND operator ^ & -- the truth table really matters for this.
+
+101 ^ 110
+
+Similar to when we add binary numbers, but some rules are different.
+We add them one over the other:
+
+101
+110
+
+But its AND, not PLUS. 
+
+1 ^ 0 = 0
+0 ^ 1 = 0
+1 ^ 1 = 1
+
+The answer is 100.
+
+4 ^ 7
+
+1) Convert 4 to binary, and 7 to binary. 4 = 100; 7 = 111
+
+100
+111
+
+0 ^ 1 = 0
+0 ^ 1 = 0
+1 ^ 1 = 1
+
+100 in binary is 4 in decimal. The answer is 4.
+
+################################################################
+
+OR (upside-down arrow)
+
+Rules: 1 OR 1 = 1, 1 OR 0 = 1, 0 OR 1 = 1, 0 OR 0 = 0
+
+101110 OR 11101
+
+101110
+ 11101
+
+Just compare them using the rules.
+
+For decimal, convert it to binary, then convert it back.
+
+##############################################################
+
+XOR (weird plus symbol in circle)
+
+Rules: Whenever the operands are different, we get 1. Whenever they're the same, we get 0.
+
+0XOR1 = 1, 1XOR0 = 1, 1XOR1 = 0, 0XOR0 = 1
+
+Write one under another, start from the right, then use the above logic.
+
+If you need to apply it to decimal, convert the decimal to binary, then back to decimal.
+
+###############################################################
+
+(1 OR 1) XOR (11 AND 10)
+
+This is a combination of operators.
+
+Whatever goes in the brackets gets solved first. We have two pairs of brackets, it doesn't matter which of these we solve first, as long as we do the brackets first.
+
+1. (1 OR 1)
+2. (11 AND 10)
+3. XOR
+
+1 OR 1 = 1
+11 AND 10 = 10
+11 XOR 10 = 11
+
+###################################################################
+
+BIT SHIFTS << (left bit shift)  >> (right bit shift)
+
+We have left shifts, and right shifts.
+
+Eg 1001 << 2
+
+We are shifting the entire number either to the left or to the right, and add the given number of zeros to the right (WHEN LEFT SHIFTING).
+
+We start with the right side.
+
+1001 << 2 = 1100100
+
+WHEN RIGHTSHIFTING:
+
+You move the entire number to the right, and lose the given number of digits. So for the same number, the answer is 11. 
+
+11001 >> 3 = 11.
+
+######################################################################
+Logic 
+
+When is the following false?
+
+p v (NOT q) => r
+
+Rules: A => B is false when A is true and B is false
+
+So in our case, p v (NOTq) is true, and r is false.
+
+What makes p v (NOTq) true? Either p is true, or NOTq is true, or both are true.
+
+If NOTq is true, then q is false.
+
+If p is true, q can be anything.
+
+If NOTq is true, p can be anything.
+
+r = F, p = T, q = T    OR.     r = F, p = T, q = F     OR.     r = f, q = F, p = F
+
+################################################################################
+
+SETS
+
+There are no repetitions in sets, every element is unique.
+
+We can use different operations on sets.
+
+We use a capital letter to name a set. When we describe an element in a set, we use {}.
+
+We use E, which is epsilon, and it means "an element of" or "belongs to".
+
+a E A  --> a is an element of set A.
+
+E with a line through it means "NOT an element of".
+
+0 or {} --> an empty set.
+
+| --> "such that"
+
+A = { x E N | x < 15 } --> set A is a set of natural numbers under 15. So A = 1..14 (natural numbers start at 1 and they are whole numbers, and they have to be less than 15 and not equal to it).
+
+REAL NUMBERS (R): All whole and float numbers (negative, positive and 0); a superset of integers and natural numbers.
+
+NATURAL NUMBERS (N): all positive whole numbers (a subset of integers && real numbers)
+
+INTEGERs (Z): all whole numbers including negative, positive, and 0 (the super set of natural numbers && subset of real numbers).
+
+#############################################################################
+
+INTERSECTION (upside-down u)
+
+A = {1, 2, 4, 7, 8}
+B = {1, 3, 4}
+
+The intersection is numbers that are included in both sets.
+
+A upside-down u = {1, 4}
+
+If none intersect, it's an empty set, or 0.
+
+###############################################################################
+
+UNION (U)
+
+The union will be all the elements of both sets.
+
+*** Union is going to be a set as well, so it can't include the same elements more than once ***
+
+A = {1, 2, 4, 7, 8}
+B = {1, 3, 4}
+
+A U B = {1, 2, 3, 4, 7, 8}
+
+###############################################################################
+
+In the case of strings in sets, you just need to make every character an element without duplicates.
+
+A = "convention"
+
+B = "over configuration"
+
+A = {c, o, n, v, e, t, i}
+
+B = {o, v, e, r, , c, n, f, I, g, u, a, t}
+
+A - B = ? The difference is going to be all the elements of set A, without any elements that are included in B.
+
+A - B = {}.   (Empty set, because every element from A is included in B)
+
+B - A = {r, , f, g, u, a}
+
+###############################################################################
+
+FIND ELEMENTS OF A SET
+
+{ x 1 x > 0 ; x < 15, x / 3 E N }
+
+^^ This is a set of elements such that the elements are positive, less than 15, and x divided by 3 results in a whole number (they're divisible by 3).
+
+So it is {3, 6, 9, 12}
+
+##############################################################################
+
+XOR in sets means symmetric difference.
+
+A XOR B = A UNION B - A INTERSECTION B
